@@ -89,28 +89,28 @@ float alpha = 1;
 static const char *colorname[] = {
 
   /* 8 normal colors */
-  [0] = "#c5c1b4", /* black   */
-  [1] = "#e75c58", /* red     */
-  [2] = "#00a250", /* green   */
-  [3] = "#a08a00", /* yellow  */
-  [4] = "#208ffb", /* blue    */
-  [5] = "#d160c4", /* magenta */
-  [6] = "#00a4c1", /* cyan    */
-  [7] = "#3e424d", /* white   */
+  [0] = "#2b303b", /* black   */
+  [1] = "#bf616a", /* red     */
+  [2] = "#a3be8c", /* green   */
+  [3] = "#ebcb8b", /* yellow  */
+  [4] = "#8fa1b3", /* blue    */
+  [5] = "#b48ead", /* magenta */
+  [6] = "#96b5b4", /* cyan    */
+  [7] = "#c0c5ce", /* white   */
 
   /* 8 bright colors */
-  [8]  = "#a1a6b2", /* black   */
-  [9]  = "#b22b31", /* red     */
-  [10] = "#007427", /* green   */
-  [11] = "#715f00", /* yellow  */
-  [12] = "#0065ca", /* blue    */
-  [13] = "#a03196", /* magenta */
-  [14] = "#007693", /* cyan    */
-  [15] = "#282c36", /* white   */
+  [8]  = "#65737e", /* black   */
+  [9]  = "#bf616a", /* red     */
+  [10] = "#a3be8c", /* green   */
+  [11] = "#ebcb8b", /* yellow  */
+  [12] = "#8fa1b3", /* blue    */
+  [13] = "#b48ead", /* magenta */
+  [14] = "#96b5b4", /* cyan    */
+  [15] = "#eff1f5", /* white   */
 
   /* special colors */
-  [256] = "#fef9ec", /* background */
-  [257] = "#6d727e", /* foreground */
+  [256] = "#2b303b", /* background */
+  [257] = "#c0c5ce", /* foreground */
 };
 /*
  * Default colors (colorname index)
@@ -248,16 +248,18 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
-	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
+	{ ControlMask | ShiftMask,     XK_K,           kscrollup,      {.i =  1} },
+	{ ControlMask | ShiftMask,     XK_J,           kscrolldown,    {.i =  1} },
+	{ ControlMask | ShiftMask,     XK_U,           kscrollup,      {.i =  20} },
+	{ ControlMask | ShiftMask,     XK_D,           kscrolldown,    {.i =  20} },
 	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
-	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
+	//{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
+	//{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
 	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
-	{ TERMMOD,              XK_J,           zoom,           {.f = -1} },
+	{ ControlMask | ShiftMask,              XK_L,           zoom,           {.f = +1} },
+	{ ControlMask | ShiftMask,              XK_H,           zoom,           {.f = -1} },
 	{ TERMMOD,              XK_U,           zoom,           {.f = +2} },
 	{ TERMMOD,              XK_D,           zoom,           {.f = -2} },
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },

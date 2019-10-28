@@ -2122,6 +2122,8 @@ main(int argc, char *argv[])
 	xw.l = xw.t = 0;
 	xw.isfixed = False;
 	win.cursor = cursorshape;
+    Arg targ;
+    targ.f = 0;
 
 	ARGBEGIN {
 	case 'a':
@@ -2166,6 +2168,9 @@ main(int argc, char *argv[])
 	case 'v':
 		die("%s " VERSION "\n", argv0);
 		break;
+    case 'z':
+        targ.f = 10;
+        break;
 	default:
 		usage();
 	} ARGEND;
@@ -2190,6 +2195,7 @@ run:
 	xinit(cols, rows);
 	xsetenv();
 	selinit();
+    zoom(&targ);
 	run();
 
 	return 0;
